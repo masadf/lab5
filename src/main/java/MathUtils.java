@@ -2,8 +2,6 @@ import dto.Limit;
 import dto.MathStat;
 
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class MathUtils {
 
@@ -41,7 +39,7 @@ public class MathUtils {
                 .dataWithoutRepetition(dataWithoutRepetition)
                 .expectedValue(expectedValue)
                 .dispersion(dispersion)
-                .deviation(Math.sqrt(dataWithoutRepetition.size() * dispersion / dataWithoutRepetition.size() - 1))
+                .deviation(Math.sqrt(dataWithoutRepetition.size() * dispersion / (dataWithoutRepetition.size() - 1)))
                 .count(count)
                 .probability(probability)
                 .build();
